@@ -215,6 +215,86 @@
 .nav-item:hover {
     text-shadow: 0 0 8px rgba(255, 234, 0, 0.6);
 }
+/* Shout Out Grid System */
+.shoutout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+.hall-of-fame {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.original-crew {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+.member-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+.legendary {
+    border: 1px solid #ffea00;
+    background: linear-gradient(145deg, rgba(255, 234, 0, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+    box-shadow: 0 0 15px rgba(255, 234, 0, 0.1);
+}
+.member-card h3 { color: #ffea00; margin: 0 0 5px 0; font-size: 18px; }
+.legendary h3 { font-size: 22px; }
+.member-card span { font-size: 11px; opacity: 0.7; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+.member-card p { font-size: 13px; margin: 10px 0 0 0; opacity: 0.8; line-height: 1.4; text-align: left; }
+.legend-badge {
+    display: inline-block;
+    background: #ffea00;
+    color: #000;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+@media (max-width: 900px) {
+    .hall-of-fame { grid-template-columns: 1fr; }
+    .original-crew { grid-template-columns: repeat(2, 1fr); }
+}
+      /* Player Wall Grid */
+.player-wall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.player-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #cccccc;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.player-tag:hover {
+    background: rgba(255, 234, 0, 0.1);
+    border-color: #ffea00;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Accent for special veteran players if you want */
+.player-tag.veteran {
+    border-color: rgba(255, 234, 0, 0.4);
+    color: #ffea00;
+}
     </style>
 </head>
 
@@ -225,7 +305,7 @@
 <header>
   
 <img
-  src="https://i.imgur.com/bVaBSkP.png"
+  src="https://i.imgur.com/mIg8WCd.png"
   alt="SULLIVAN SMP"
   class="header-title"
 />
@@ -246,91 +326,112 @@
 
 <section>
    <div class="box">
-    <h2><u>Thông tin chính về các servers</u></h2>
+    <h2><u>Nguồn Gốc của server</u></h2>
     <div class="content">
 	<ul>
-        <li>Server trong quá trình hoạt động sẽ luôn chạy 24/7, có cấu hình mạnh và đã được tối ưu hóa tốt</li>
-        <li>Không cần minecraft trả phí, chỉ cần được admin duyệt để có thể vào và chơi cùng mn</li>
-        <li>Các tiến trình, luật lệ đều sẽ do người chơi quyết định, tài khoản admin sẽ hầu như không online (mn đừng hack/Xray là được) </li>
-    <li>Các server sẽ dùng whitelist để tránh người lạ kẻ gian, nên muốn chơi thì cứ tự nhiên tham gia <a href="https://discord.gg/cVV5dSq7Ph" style="color: #ffea00; text-decoration: none; font-weight: bold;">Server Discord</a> để dc duyệt và chơi cùng bọn mình nha!</li>
+<ul>
+  <li>Dự án này ban đầu vốn chỉ là một bài tập HTML & CSS nhỏ ở trường, nhưng rồi tụi mình đã thổi hồn vào nó để biến thành một cái gì đó ý nghĩa hơn.</li>
+  <li>Mục tiêu đầu tiên của trang web chỉ là nơi để quảng bá chiếc server Minecraft "nhà trồng" do nhóm tự tay gây dựng.</li>
+  <li>Mỗi thành viên trong nhóm đều góp công cùng, dù làm nhiều hay ít thì tâm huyết của ai cũng đều đáng quý và mang đậm dấu ấn cá nhân.</li>
+  <li>Từ một trang web giới thiệu đơn thuần, nhờ sự ủng hộ mà nó đã phát triển đến ngày hôm nay. Cảm ơn tất cả các thành viên đã cùng đồng hành và cống hiến cùng dự án!</li>
+</ul>
 	</ul>
     </div>
 
-    <img src="https://i.imgur.com/GcqQgQ5.jpeg" loading="lazy">
+    <img src="https://i.imgur.com/yX7Vhyi.jpeg" loading="lazy">
 </div>
 
 </section>
 
 
 <section>
+<section id="shout-out">
     <div class="box">
-        <h2> <u>Thắc mắc và giải đáp</u> </h2>
-          <div class="content">
-	<ul>
-  <table class="qa-table">
-    <tr>
-        <th>Thắc mắc</th>
-        <th>Giải đáp</th>
-    </tr>
-    <tr>
-        <td>Server mở 24/7 không?</td>
-        <td>Có, Server chạy liên tục, chỉ đóng khi bảo trì, dừng hoạt động hoặc có sự cố</td>
-    </tr>
-    <tr>
-        <td>Có cần mua Minecraft bản quyền?</td>
-        <td>Không, Server có hỗ trợ cho người chơi sử dụng acc minecraft miễn phí</td>
-    </tr>
-    <tr>
-        <td>Server có reset không?</td>
-        <td>Server sẽ cố gắng ko reset với mục tiêu là 1 thế giới nơi mn để lại dấu ấn của mình!</td>
-    </tr>
-    <tr>
-        <td>Làm sao để tham gia?</td>
-        <td>Chỉ cần liên hệ với admin để được duyệt,và gắn IP của server vào minecraft như mọi server khác</td>
-      </tr>
-	  <tr>
-        <td>Server có luật ko?</td>
-        <td>Tuỳ mỗi server, nhưng nhìn chung sẽ chỉ chính thức bị ban khi hack/xray</td>
-    </tr>
-	   <tr>
-        <td>Các thông tin về server sẽ được thông báo ở đâu?</td>
-        <td>Các thông tin mới nhất về phiên bản, IP, modslist sẽ được cập nhật lên ngay các trang của từng server nhanh nhất có thể!</td>
-    </tr>
-    <tr>
-        <td>Chưa biết tải, fps thấp, vấn để kĩ thuật/phần mềm?</td>
-        <td>Cứ Dm qua discord bên dưới, chúng tôi sẽ cố gắng giúp nếu có thể</td>
-    </tr>
-</table>
+        <h2><u>Ghi công - Sullivan Servers</u></h2>
+        <p style="margin-bottom: 30px;">Vinh danh những người đã góp công xây dựng và giữ lửa cho cộng đồng, từ người tâm huyết nhất đến những người đông hành và góp công đầu tiên!</p>
+        
+        <div class="shoutout-container">
+            <div class="hall-of-fame">
+                <div class="member-card legendary">
+                    <div class="legend-badge">CORE LEGEND</div>
+                    <h3>valguy</h3>
+                    <span>Coder - Host</span>
+                    <p>Người cầm trịch hệ thống, tối ưu hóa servers, code website và giữ cho con tàu Sullivan luôn chạy mượt mà!</p>
+                </div>
+                <div class="member-card legendary">
+                    <div class="legend-badge">CORE LEGEND</div>
+                    <h3>Zxx Wxxxxxm</h3>
+                    <span>Designer - Tester</span>
+                    <p>Bàn tay ma thuật đằng sau vẻ ngoài của website và những thiết kế sắc lẹm cho cộng đồng.</p>
+                </div>
+                <div class="member-card legendary">
+                    <div class="legend-badge">CORE LEGEND</div>
+                    <h3>Noe Comos</h3>
+                    <span>Supporter - Tester</span>
+                    <p>Người giữ lửa Discord, hỗ trợ anh em tận tình và luôn là người đầu tiên test mọi tính năng mới.</p>
+                </div>
+            </div>
 
-	</ul>
-    </div>
-        </section>
-    
-<section>
-    <div class="box">
-        <h2> <u>Hướng dẫn cài đặt game cơ bản (Minecraft)</u> </h2>
-          <div class="content">
-	<ul>
-        <li> Video dưới đây sẽ hướng dẫn bạn cách tải minecrat miễn phí trên window! (nguồn:Youtube) </li>
-        <li> Những Links có thể bạn cần: </li>
-        <li> <a href="https://llaun.ch/vi" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Legacy Launcher (Cracked Minecraft)</a> </li>
-        <li> <a href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Java SE 21 (cài nếu vào minecraft bị lỗi)</a> </li>
-        <li> <a href="https://modrinth.com/modpack/fabulously-optimized" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Optimized modpack (optional nhưng cải thiện hiệu năng rất nhiều)</a> </li>
-        <li> <a href="https://pojavlauncher.net/" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Minecraft Java trên điện thoại (PojavLauncher, cần điện thoại tốt)</a> </li>
-
-	</ul>
-        <iframe 
-    width="640" 
-    height="360"
-    src="https://www.youtube.com/embed/hn4NRB-NhT0"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-</iframe>
+            <div class="original-crew">
+                <div class="member-card">
+                    <h3>Đức Thịnh</h3>
+                    <span>Nhóm tin đầu tiên</span>
+                </div>
+                <div class="member-card">
+                    <h3>Bích Thuỷ</h3>
+                    <span>Nhóm tin đầu tiên</span>
+                </div>
+                <div class="member-card">
+                    <h3>Trung Kiên</h3>
+                    <span>Nhóm tin đầu tiên</span>
+                </div>
+                <div class="member-card">
+                    <h3>Chí Khanh</h3>
+                    <span>Nhóm tin đầu tiên</span>
+                </div>
+                <div class="member-card">
+                    <h3>Phương Uyên</h3>
+                    <span>Nhóm tin đầu tiên</span>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+        </section>
 
+ <section>
+   <section id="players">
+    <div class="box">
+        <h2><u>Cộng Đồng Sullivan Servers!</u></h2>
+        <p>Những người bạn đã và đang đồng hành cùng chúng mình qua mọi chặng đường.</p>
+        
+<div class="player-wall">
+    <div class="player-tag veteran">Valguy</div>
+    <div class="player-tag veteran">mazudai</div>
+      <div class="player-tag veteran">KNOETE</div>
+      <div class="player-tag veteran">Suly</div>
+      <div class="player-tag veteran">mem</div>
+      <div class="player-tag veteran">Izymorin</div>
+      <div class="player-tag veteran">Linh_2806</div>
+
+    <div class="player-tag">triu</div>
+    <div class="player-tag">Mickee</div>
+    <div class="player-tag">vincorn</div>
+    <div class="player-tag">nNamaG</div>
+    <div class="player-tag">z1_Thayba</div>
+    <div class="player-tag">anhsondenday</div>
+    <div class="player-tag">Joyy</div>
+    <div class="player-tag">MikeyJR11</div>
+    <div class="player-tag">Mily_Wiliam</div>
+    <div class="player-tag">anatza</div>
+    <div class="player-tag">DatLam</div>
+    <div class="player-tag">conmeobeo01</div>
+    <div class="player-tag">huynhthong</div>
+    <div class="player-tag">AlejandroNguyen</div>
+</div>
+    </div>
+</section>
+   
 <footer>
   <div class="footer-container">
     <div class="footer-box">
