@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SullivanSMP - 24/7 Minecraft Survival Server</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/BAGiTAX.jpeg">
+	
+    <style>
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://i.imgur.com/wqPS8cR.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+        header {
+            padding: 50px 40px;
+            background-image: url("https://i.imgur.com/2WXQhVU.jpeg");
+  	      background-size: cover;
+  	      background-position: center;
+  	      background-repeat: no-repeat;
+	      color: white;}
+      @media (max-width: 900px) {
+  header {
+    padding: 90px 25px;
+  }}
+        section {
+      margin: 40px auto;
+      max-width: 1100px;}
+        .box {
+            padding: 40px;
+            background-color: #2a2a2a;
+          border-radius: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease,
+                box-shadow 0.3s ease;
+}
+        .box.show {
+            opacity: 1;
+            transform: translateY(0);
+}
+        section:hover .box {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px #000000;
+}
+        .box img {
+            width: 640px;
+	    height: 360px;
+            margin-top: 20px;
+}
+      .box h2 {
+    text-align: center;
+}
+
+.box .content {
+    max-width: 600px;
+    margin: 10px auto;
+    text-align: left;
+}
+        footer {
+            padding: 40px;background-color: #111111;}
+        hr {width: 60%;margin: 40px auto;}
+	   h1 {font-size: 69px;
+  		text-shadow: 6px 6px 12px #000000;}
+     p {line-height: 1.7;}
+      ul {
+    padding-left: 10px;
+}
+li {
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+      table.cool-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+.cool-table th {
+    background-color: #111111;
+    padding: 18px;
+    font-size: 20px;
+    text-align: center;
+}
+.cool-table td {
+    padding: 14px 20px;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+.cool-table tr:hover {
+    background-color: #2a2a2a;
+    transition: background-color 0.3s ease;
+}
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: #ffffff;
+    z-index: 9999;
+}
+      hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ffffff, transparent);
+}
+      a {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+.box {
+    backdrop-filter: blur(2px);
+}
+      @media (max-width: 600px) {
+    .box {
+        padding: 25px;
+    }
+    li {
+        font-size: 15px;
+    }
+}
+      #mini-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0,0,0,0.85);
+    color: #ffffff;
+    font-weight: bold;
+    display: none;
+    z-index: 9998;
+}
+.box img,
+.box iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+  html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+      .spoiler-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #ffea00;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.spoiler-btn:hover {
+    background: #fff176;
+}
+.spoiler-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.4s ease;
+}
+.spoiler-content.open {
+    max-height: 1000px;
+    opacity: 1;
+}
+    .spoiler {
+  margin-top: 20px;
+  text-align: left;
+}
+.spoiler summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffea00;
+  padding: 10px 0;
+  list-style: none;
+}
+.spoiler summary::-webkit-details-marker {
+  display: none;
+}
+.spoiler[open] summary {
+  margin-bottom: 15px;
+}
+      .spoiler summary {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffea00;
+  padding: 12px 0;
+  list-style: none;
+}
+      .qa-table {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.qa-table th {
+    background-color: #111111;
+    padding: 16px;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: left;
+}
+.qa-table td {
+    padding: 14px 18px;
+    border-top: 1px solid #333;
+    text-align: left;
+    line-height: 1.6;
+}
+.qa-table tr:hover {
+    background-color: #2a2a2a;
+    transition: background-color 0.3s ease;
+}
+      .logo {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 25px auto;
+    animation: logoFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
+    transition: transform 0.4s ease;
+}
+.logo:hover {
+    transform: scale(1.08) rotate(-1deg);
+}
+
+@keyframes logoFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
+      @media (max-width: 600px) {
+    .logo {
+        width: 90px;
+        margin-bottom: 20px;
+    }
+}
+
+      .logo {
+    width: 120px;
+    margin: 0 auto 25px;
+    padding: 15px;
+
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.02)
+    );
+
+    backdrop-filter: blur(6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+      
+      
+      header {
+    animation: headerFade 1.2s ease forwards;
+}
+
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+      .version-mark {
+    margin-top: 30px;
+    font-size: 12px;
+    font-family: "Courier New", monospace;
+    color: #ff0000;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: 0.7;
+    user-select: none;
+}
+
+      .status-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.65);
+  border-radius: 999px;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+.status-box .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+}
+
+/* optional subtle pulse while checking */
+.status-box.checking {
+  opacity: 0.85;
+}
+
+      .spacer {
+  height: 20px;      /* adjust */
+  margin: 0;
+  visibility: hidden;
+}
+      
+      .copy-tooltip {
+  position: fixed;
+  padding: 6px 12px;
+  background: rgba(0,0,0,0.85);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 10000;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+  transform: translate(-50%, -35px);
+}
+
+.server-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.server-status.mini {
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  transition: background 0.3s ease;
+}
+
+.status-dot.online {
+  background: #00ff6a;
+}
+
+.status-dot.checking {
+  background: #888;
+}
+
+.dots::after {
+  content: "";
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%   { content: ""; }
+  33%  { content: "."; }
+  66%  { content: ".."; }
+  100% { content: "..."; }
+}
+
+      .server-status-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* shared pill style */
+.server-status,
+.server-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* dots */
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+/* states */
+.online .dot {
+    background: #00ff66;
+    box-shadow: 0 0 6px #00ff66;
+}
+
+.offline .dot {
+    background: #ff4444;
+    box-shadow: 0 0 6px #ff4444;
+}
+
+.checking .dot {
+    background: #aaaaaa;
+    animation: blink 1.2s infinite;
+}
+
+/* typing dots effect */
+@keyframes blink {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+   .header-title {
+  max-width: 90%;
+  width: 900px;
+  height: auto;
+  margin: 0 auto 20px;
+  display: block;
+
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.7));
+}
+   
+.server-core {
+  margin: 25px auto 0;
+  padding: 16px 20px;
+  max-width: 600px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  background: none;
+  box-shadow: none;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+      .core-item {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.08);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.notice {
+  background: rgba(0, 0, 0, 0.35); /* lighter than before */
+  backdrop-filter: blur(4px);     /* was probably 8–12px */
+  -webkit-backdrop-filter: blur(4px);
+
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+
+.notice {
+  grid-column: 1 / -1;
+}
+
+.sub-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: rgba(0, 0, 0, 0.6); 
+    backdrop-filter: blur(12px); /* Matches your logo style */
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid #ffea00; /* Thin gold line across the bottom */
+    margin: 0 auto 30px auto;
+    width: 100%;
+    max-width: 1100px; /* Matches your section width */
+    border-radius: 0 0 14px 14px; /* Rounded bottom corners */
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.nav-item {
+    position: relative;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1.5px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item span {
+    position: relative;
+    z-index: 2;
+}
+
+/* The Animated Background Glow */
+.nav-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 234, 0, 0.15) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Hover Effects */
+.nav-item:hover {
+    color: #ffffff !important;
+    text-decoration: none;
+    letter-spacing: 2.5px; /* Text expands slightly */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item:hover::before {
+    opacity: 1;
+}
+
+/* The "Active" Underline Spark */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #ffea00;
+    box-shadow: 0 0 15px #ffea00;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.nav-item:hover::after {
+    width: 80%; /* Underline grows from center */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .sub-nav {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 95%;
+        border-radius: 14px; /* Full rounded on mobile */
+    }
+    .nav-item { padding: 15px 0; font-size: 12px; }
+}
+    </style>
+</head>
+
+<body>
+  <div id="mini-header">
+  countries-sullivan.gl.joinmc.link - 1.21.11
+</div>
+    
+</div>
+
+<header>
+  
+<img
+  src="https://i.imgur.com/l5SVpD0.png"
+  alt="SULLIVAN SMP"
+  class="header-title"
+/>
+  <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> - Minecraft 1.21.11 </h3>
+<div id="server-status" class="status-box checking">
+  <span class="dot"></span>
+  <span id="status-text">Checking server status<span id="dots">...</span></span>
+</div>
+
+<!--
+<div class="server-status-wrap">
+    <div class="server-note checking" id="serverNote">
+        <span id="noteText">Nguyên Nhân: Bảo Trì - Dự kiến Mở Lại: Sớm Nhất Có Thể </span>
+    </div> -->
+
+</div>
+
+  <p class="spacer"></p>
+  <p class="spacer"></p>
+  <img src="https://i.imgur.com/osQ1142.jpeg" class="logo" alt="SullivanSMP Logo"  loading="lazy">
+
+<div class="server-core">
+  <div class="core-item notice">
+    Server có sử dụng Whitelist vì mục đích an toàn
+  </div>
+  <div class="core-item notice">
+    Nếu muốn tham gia, hãy Join Server Discord bên dưới!
+  </div>
+</div>
+<nav class="sub-nav">
+    <a href="index.html" class="nav-item"><span>TRANG CHỦ</span></a>
+    <a href="server1.html" class="nav-item"><span>SERVER 1</span></a>
+    <a href="server2.html" class="nav-item"><span>SERVER 2</span></a>
+    <a href="server3.html" class="nav-item"><span>SERVER 3</span></a>
+    <a href="server4.html" class="nav-item"><span>SERVER 4</span></a>
+</nav>
+    
+</header>
+
+<hr>
+
+<section>
+   <div class="box">
+    <h2><u>Thông tin chính về server</u></h2>
+    <div class="content">
+	<ul>
+        <li>Server luôn chạy 24/7, Máy chủ có cấu hình mạnh và đã được tối ưu hóa tốt</li>
+        <li>Không cần minecraft trả phí để vào, chỉ cần được admin duyệt</li>
+        <li>Server sẽ chỉ thêm các tín năng mới, không làm thay đổi cốt lõi vanilla của game</li>
+        <li>Mọi tiến trình, luật lệ đều sẽ do người chơi quyết định, tài khoản admin sẽ hầu như không online (mn đừng hack/Xray là được) </li>
+	</ul>
+    </div>
+
+    <img src="https://i.imgur.com/Mubbslp.jpeg" loading="lazy">
+</div>
+
+</section>
+
+<section>
+    <div class="box">
+        <h2> <u>Địa hình, Công trình mới</u> </h2>
+          <div class="content">
+	<ul>
+      <li>Server đã cải tạo lại hầu như tất cả các biome và có cả những địa hình mới</li>
+      <li>Có trên dưới 100 công trình mới lớn nhỏ và tất cả đều đặc biệt theo cách riêng</li>
+      <li>Nhiều công trình trong minecraft cũng đã được nâng cấp!</li>
+	  <li>Quái vật đã được cải thiện và tùy chỉnh, tăng thử thách và thú vị cho game</li>
+	</ul>
+        <img src="https://i.imgur.com/YRrt9gv.jpeg" loading="lazy">
+    </div>
+</section>
+ 
+  <section>
+    <div class="box">
+        <h2> <u>Kho báu, thử thách và vật phẩm thú vị</u> </h2>
+          <div class="content">
+	<ul>
+      <li>Các công trình đầy những thử thách, bí mật, và vật phẩm mới! </li>
+      <li>Có hơn 30+ vũ khí, phù phép và bosses mới đặc biệt và mạnh mẽ trong các công trình lớn</li>
+      <li>EnderDragon đã được tăng sức mạnh, thách thức cả những trang bị tốt nhất</li>
+	</ul>
+        <img src="https://i.imgur.com/KpvkPjA.jpeg" loading="lazy">
+    </div>
+</section>
+
+<section>
+    <div class="box">
+        <h2> <u>Những thắc mắc cơ bản và giải đáp</u> </h2>
+          <div class="content">
+	<ul>
+  <table class="qa-table">
+    <tr>
+        <th>Thắc mắc</th>
+        <th>Giải đáp</th>
+    </tr>
+    <tr>
+        <td>Server mở 24/7 không?</td>
+        <td>Có, Server chạy liên tục, chỉ đóng khi bảo trì (hoặc cúp điện :P)</td>
+    </tr>
+    <tr>
+        <td>Có cần mua Minecraft bản quyền?</td>
+        <td>Không, Server có hỗ trợ cho người chơi sử dụng minecraft miễn phí</td>
+    </tr>
+    <tr>
+        <td>Server có reset không?</td>
+        <td>Không reset, Mục tiêu server là 1 thế giới nơi mn để lại dấu ấn của họ!</td>
+    </tr>
+    <tr>
+        <td>Làm sao để tham gia?</td>
+        <td>Chỉ cần liên hệ với admin để được duyệt,và gắn IP vào minecraft như mọi server khác</td>
+      </tr>
+	  <tr>
+        <td>Server có Vanilla hoàn toàn không?</td>
+        <td>Ngoài add những công trình & địa hình mới, server sẽ là vanilla, không luật lệ, chỉ cấm Hack & Xray</td>
+    </tr>
+	   <tr>
+        <td>Các thông tin về server sẽ được thông báo ở đâu?</td>
+        <td>Các thông tin mới nhất về phiên bản, IP, modslist sẽ được cập nhật lên ngay website này liên tục và nhanh nhất có thể, hoặc bạn có thể tham gia server Discord bên dưới!</td>
+    </tr>
+    <tr>
+        <td>Chưa biết tải, fps thấp?</td>
+        <td>Cứ Dm qua discord bên dưới, chúng tôi sẽ cố gắng giúp nếu có thể</td>
+    </tr>
+</table>
+
+	</ul>
+    </div>
+        </section>
+    
+<section>
+    <div class="box">
+        <h2> <u>Hướng dẫn cài đặt game (Minecraft)</u> </h2>
+          <div class="content">
+	<ul>
+        <li> Video dưới đây sẽ hướng dẫn bạn cách tải minecrat miễn phí trên window! (nguồn:Youtube) </li>
+        <li> Những Links có thể bạn cần: </li>
+        <li> <a href="https://llaun.ch/vi" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Legacy Launcher (Cracked Minecraft)</a> </li>
+        <li> <a href="https://www.oracle.com/java/technologies/javase/jdk21-archive-downloads.html" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Java SE 21 (cài nếu vào minecraft bị lỗi)</a> </li>
+        <li> <a href="https://modrinth.com/modpack/fabulously-optimized" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Optimized modpack (optional nhưng cải thiện hiệu năng rất nhiều)</a> </li>
+        <li> <a href="https://pojavlauncher.net/" target="_blank" rel="noopener noreferrer" style="color: #ffea00;">Link tải Minecraft Java trên điện thoại (PojavLauncher, cần điện thoại tốt)</a> </li>
+
+	</ul>
+        <iframe 
+    width="640" 
+    height="360"
+    src="https://www.youtube.com/embed/hn4NRB-NhT0"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
+    </div>
+</section>
+
+	<section>
+  <div class="box">
+    <h2><u>Thông tin kĩ thuật về server</u></h2>
+       <!----> <div class="server-core">
+  <div class="core-item">🧠 CPU: I3 10100</div>
+  <div class="core-item">💾 RAM: 16GB DDR4 2666Mhz</div>
+  <div class="core-item">💽 Storage: 160GB Sata SSD</div>
+  <div class="core-item">🌐 Connection: Ethernet Viettel</div> 
+</div>
+	  <!-- <div class="server-core">
+  <div class="core-item">🧠 CPU: I3 2310M</div>
+  <div class="core-item">💾 RAM: 4GB DDR3 1333Mhz</div>
+  <div class="core-item">💽 Storage: 100GB Sata SSD</div>
+  <div class="core-item">🌐 Network: WLAN Viettel</div> 
+</div> -->
+    <details class="spoiler">
+      <summary>▶ Danh Sách Mod/Datapack Của Server</summary>
+      
+      <table class="cool-table">
+        <tr>
+          <th>Tên mod</th>
+          <th>Chức năng</th>
+        </tr> 
+<tr><td>AFK Display</td><td> Hiện afk player </td></tr>
+<tr><td>Almanac</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>AntiXray</td><td> Chống Xray </td></tr>
+<tr><td>Backup Always Right</td><td> Backup cho server </td></tr>
+<tr><td>C2ME</td><td> Tối ưu hóa </td></tr>
+<tr><td>Kiss</td><td> Hmmmm.... </td></tr>
+<tr><td>Chunky</td><td> Tối ưu hóa </td></tr>  
+<tr><td>Chunk Offline</td><td> Tối ưu hóa </td></tr>
+<tr><td>Cloth Config</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Clumps</td><td> Tối ưu hóa </td></tr>
+<tr><td>Collective</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>CristelLib</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Dungeons+</td><td> Công trình mới </td></tr>
+<tr><td>Dungeons and Taverns</td><td> Công trình mới </td></tr>
+<tr><td>DNT – Ancient City</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Desert Temple</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Jungle Temple</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Nether Fortress</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Ocean Monument</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Pillager Outpost</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Swamp Hut</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT - Stronghold (Lite)</td><td> Nâng cấp công trình </td></tr>
+<tr><td>DNT – Woodland Mansion</td><td> Nâng cấp công trình </td></tr>
+<tr><td>EasyAuth</td><td> Mật khẩu cho players </td></tr>
+<tr><td>Explorify</td><td> Công trình mới </td></tr>	  
+<tr><td>Fabric API</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Fabric Language Kotlin</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Forge Config API Port</td><td> Hỗ trợ mod khác </td></tr>
+<!--<tr><td>Floodgate (Experimental)</td><td> Hỗ trợ mod khác </td></tr>-->
+<tr><td>FerriteCore</td><td> Tối ưu hóa </td></tr>
+<tr><td>FSIT</td><td> Tín năng ngồi </td></tr>
+<tr><td>Geophilic</td><td> Nâng cấp địa hình </td></tr>
+<!--<tr><td>Geyser (Experimental)</td><td> Bedrock Proxy </td></tr>-->
+<tr><td>Get It Together Drops</td><td> Tối ưu hóa </td></tr>
+<tr><td>Graves</td><td> Mộ giữ đồ khi chết </td></tr>
+<tr><td>GrimAC</td><td> Chống hack </td></tr
+<tr><td>Gamingbarn's Morphs</td><td> Công cụ Admin </td></tr
+<tr><td>Incendium</td><td> Nâng cấp địa hình,Công trình mới </td></tr>
+<tr><td>InvView</td><td> Công cụ Admin </td></tr>
+<tr><td>ItemFlexer</td><td> Show item lên chat </td></tr>
+<tr><td>Let Me Despawn</td><td> Tối ưu hóa </td></tr>
+<tr><td>Leaves Be Gone</td><td> Leave Decay nhanh hơn </td></tr>
+<tr><td>Lithium</td><td> Tối ưu hóa </td></tr>
+<tr><td>Leashable Players</td><td> Leash được player khác </td></tr>
+<tr><td>ModernFix</td><td> Tối ưu hóa </td></tr>
+<tr><td>More Mobs</td><td> Thêm nhiều loại Hostiles </td></tr>
+<tr><td>Miniblocks Wandering Trader</td><td> Wandering Trader Bán MiniBlocks </td></tr>
+<tr><td>Noisium</td><td> Tối ưu hóa </td></tr>
+<tr><td>No Feather Trample</td><td> FeartherFallin Ko làm hư ruộng</td></tr>  
+<tr><td>Nullscape</td><td> Nâng cấp địa hình </td></tr>
+<tr><td>Packet Fixer</td><td> Tối ưu hóa </td></tr>
+<tr><td>Puzzles Lib</td></td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Pk's Better Compass</td><td> Thêm chỉ số cho compass </td></tr>
+<tr><td>Pk's Better Item Frames</td><td> ItemFrame có thể vô hình </td></tr>
+<tr><td>Pk's Oxidize Copper</td><td> Oxidize copper bằng thick potions </td></tr>
+<tr><td>Pk's Racks</td><td> Kệ gác vũ khí/dụng cụ </td></tr>
+<tr><td>Pk's Shulker Boxes Names</td><td> ShulkerBox có nametag </td></tr>
+<tr><td>Polymer</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>Painting picker</td><td> Chế Tranh cụ thể bằng Stonecutter </td></tr>
+<tr><td>Random Mob Effects</td><td> Monster có RandomEffect </td></tr>
+<tr><td>Resourceful Config</td><td> Hỗ trợ mod khác </td></tr>
+<tr><td>ScalableLux</td><td> Tối ưu hóa </td></tr>
+<tr><td>ServerCore</td><td> Tối ưu hóa </td></tr>
+<tr><td>Styled Player List</td><td> Cải thiện Tablist </td></tr>
+<tr><td>Skin Restorer</td><td> skins cho players </td></tr>
+<tr><td>Spark</td><td> Tối ưu hóa </td></tr>
+<tr><td>Slumber </td><td> Tối ưu hóa </td></tr>
+<tr><td>Structory</td><td> Công trình mới </td></tr>
+<tr><td>Structory: Towers</td><td> Công trình mới </td></tr>
+<tr><td>Structure Layout Optimizer</td><td> Tối ưu hóa </td></tr>
+<tr><td>Towns and Towers</td><td> Công trình mới </td></tr>
+<tr><td>TT20</td><td> Tối ưu hóa </td></tr>
+<tr><td>True Ending</td><td> Buff Enderdragon </td></tr>
+<tr><td>Totem of Undying Death Messages</td><td> Hiện player được Totem cứu trên chat </td></tr>
+<tr><td>VanillaTweaks Recipes</td><td> Cải thiện các recipes</td></tr>
+<tr><td>Very Many Players (VMP)</td><td> Tối ưu hóa </td></tr>
+<tr><td>Villager Names</td><td> RandomName cho Villagers </td></tr>
+<tr><td>Vanish</td><td> Công cụ Admin </td></tr>
+<tr><td>Wandering Trader Announcements</td><td> Thông báo cho Wandering trader </td></tr>
+<tr><td>YetAnotherConfigLib</td><td> Hỗ trợ mod khác </td></tr>
+     </table>
+    </details>
+
+  </div>
+</section>
+
+
+<hr>
+
+<footer>
+  <h3> Tham gia Server discord và chơi minecraft cùng nhau, tại sao lại không nhỉ? </h3>
+  <h4> <a href="https://discord.gg/cVV5dSq7Ph" target="_blank" rel="noopener noreferrer" style="color: #7289DA;">Link server Discord!</a></h4>
+	<iframe src="https://discord.com/widget?id=1143241728296484955&theme=dark" width="700" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+  <table class="cool-table">
+        <tr>
+          <td>Server's Developers:</td>
+          <td>Pxxm Mxxh Txxxg </td>
+		  <td>Zxx Wxxxxxm </td>
+          <td>Hxxxg Kxm Đxxg Kxxxh </td>
+        </tr>
+	  <tr>
+		  <td>Role:</td>
+		  <td>Coder - Hoster</td>
+		  <td>Tester - Designer</td>
+		  <td>Tester - Supporter</td>
+    <tr>
+      <td>Discord:</td>
+    <td>valguypmt</td>
+    <td>----------</td>
+    <td>khanh_1</td>
+    </tr>
+    </table>
+
+    <hr>
+  <p>server tạo ra nhằm cho ae trong 1 cộng đồng nhỏ, làm quen giao lưu & chơi game cùng nhau</p>
+  <p>nhóm quản lí server là những người không có chuyên môn sâu, server cũng không phải 1 SMP lớn & công khai cho quá nhiều người lạ</p>
+  <p>mọi người trong server cũng thường vào 1 VoiceChat Discord, cùng nhau thám hiểm, trò chuyện và kết bạn mới, nên cứ tự nhiên vào Discord và chơi game cùng nhau!</p>
+  <p>dù sao thì cũng mong mọi người có khoảng thời gian xây dựng, thám hiểm, đào kim cương vui vẻ cùng nhau nhaaaaa :D</p>
+
+  <div class="version-mark">
+    Sullivan.website · v1.5 · Updated 04/02/2026
+</div>
+
+</footer>
+
+<script>
+    const boxes = document.querySelectorAll(".box");
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                } else {
+                    entry.target.classList.remove("show");
+                }
+            });
+        },
+        {
+            threshold: 0.1
+        }
+    );
+    boxes.forEach(box => observer.observe(box));
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById("scroll-progress").style.width = progress + "%";
+});
+  window.addEventListener("scroll", () => {
+    document.getElementById("mini-header").style.display =
+        window.scrollY > 300 ? "block" : "none";
+});
+  document.querySelectorAll(".spoiler-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle("open");
+
+        btn.textContent = content.classList.contains("open")
+            ? "Ẩn danh sách mod"
+            : "Xem danh sách mod";
+    });
+});
+ const dots = document.getElementById("dots");
+let dotCount = 0;
+const dotInterval = setInterval(() => {
+  dotCount = (dotCount + 1) % 4;
+  dots.textContent = ".".repeat(dotCount);
+}, 500);
+  const ipEl = document.getElementById("server-ip");
+const copyTooltip = document.createElement("div");
+copyTooltip.className = "copy-tooltip";
+copyTooltip.textContent = "Copied";
+document.body.appendChild(copyTooltip);
+ipEl.addEventListener("click", (e) => {
+  navigator.clipboard.writeText("countries-sullivan.gl.joinmc.link");
+  copyTooltip.style.left = e.clientX + "px";
+  copyTooltip.style.top = e.clientY + "px";
+  copyTooltip.classList.add("show");
+  clearTimeout(copyTooltip.hideTimer);
+  copyTooltip.hideTimer = setTimeout(() => {
+    copyTooltip.classList.remove("show");
+  }, 900);
+});
+  const statusDots = document.querySelectorAll(".status-dot");
+const statusTexts = document.querySelectorAll(".status-text");
+function setStatusOnline() {
+  statusDots.forEach(dot => {
+        dot.classList.remove("checking");
+  });
+}
+setTimeout(setStatusOnline, 3000);
+setTimeout(() => {
+  fetch("https://api.mcsrvstat.us/2/countries-sullivan.gl.joinmc.link")
+    .then(res => res.json())
+    .then(data => {
+      clearInterval(dotInterval);
+      const dot = document.querySelector(".status-box .dot");
+      const text = document.getElementById("status-text");
+      const box = document.getElementById("server-status");
+      dots.remove();
+      box.classList.remove("checking");
+      if (data.online) {
+        dot.style.background = "#00ff6a";
+        text.textContent = `Server Online · ${data.players.online}/${data.players.max} players`;
+      } else {      
+/* EDIT THE SERVER STATUS MANUALLY DOWN HERE */
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        dot.style.background ="#00ff00";
+        text.textContent = "Server Online";
+        /* RED:#ff3b3b  -  GREEN: #00ff00*/
+        /* [Nguyên Nhân: Bảo Trì - Dự kiến Mở Lại: Sớm Nhất Có Thể] */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+/* EDIT THE SERVER STATUS MANUALLY UP HERE */
+      }
+    })
+    .catch(() => {
+      clearInterval(dotInterval);
+      document.getElementById("status-text").textContent = "Status unavailable";
+    });
+}, 3000);
+</script>
+</body>
+</html>
+
