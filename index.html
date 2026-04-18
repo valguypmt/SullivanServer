@@ -337,7 +337,74 @@ section {
   margin: 0;
   visibility: hidden;
 }
-      
+   
+      footer {
+    background-color: #111111;
+    padding: 60px 20px 20px 20px;
+    border-top: 3px solid #ffea00; /* Yellow accent line top of footer */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Important for mobile! */
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 200px; /* Prevents them from getting too skinny */
+    text-align: left;
+}
+
+.footer-box h3 {
+    font-size: 18px;
+    color: #ffea00;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #cccccc;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 5px;
+}
+
+.footer-list a {
+    color: #cccccc !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-list a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
+/* Responsive: On mobile, show 1 or 2 columns instead of 4 */
+@media (max-width: 900px) {
+    .footer-box {
+        flex: 1 1 40%; 
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer-box {
+        flex: 1 1 100%;
+    }
+}
       .copy-tooltip {
   position: fixed;
   padding: 6px 12px;
@@ -591,7 +658,7 @@ section {
 
 <body>
   <div id="mini-header">
-  countries-sullivan.gl.joinmc.link - 1.21.11
+ Minecraft servers for all sullivers!!!
 </div>
     
 </div>
@@ -599,95 +666,46 @@ section {
 <header>
   
 <img
-  src="https://i.imgur.com/l5SVpD0.png"
+  src="https://i.imgur.com/bVaBSkP.png"
   alt="SULLIVAN SMP"
   class="header-title"
 />
-  <h3 id="server-ip" style="cursor:pointer">IP: <span style="color:#ffea00;">countries-sullivan.gl.joinmc.link</span> - Minecraft 1.21.11 </h3>
-<div id="server-status" class="status-box checking">
-  <span class="dot"></span>
-  <span id="status-text">Checking server status<span id="dots">...</span></span>
-</div>
-
-<!--
-<div class="server-status-wrap">
-    <div class="server-note checking" id="serverNote">
-        <span id="noteText">Nguyên Nhân: Bảo Trì - Dự kiến Mở Lại: Sớm Nhất Có Thể </span>
-    </div> -->
-
-</div>
-
   <p class="spacer"></p>
-  <p class="spacer"></p>
-  <img src="https://i.imgur.com/osQ1142.jpeg" class="logo" alt="SullivanSMP Logo"  loading="lazy">
-
-<div class="server-core">
-  <div class="core-item notice">
-    Server có sử dụng Whitelist vì mục đích an toàn
-  </div>
-  <div class="core-item notice">
-    Nếu muốn tham gia, hãy Join Server Discord bên dưới!
-  </div>
+    <p class="spacer"></p>
+    <p class="spacer"></p>
 </div>
 <nav class="sub-nav">
     <a href="index.html" class="nav-item"><span>TRANG CHỦ</span></a>
-    <a href="server1.html" class="nav-item"><span>SERVER 1</span></a>
-    <a href="server2.html" class="nav-item"><span>SERVER 2</span></a>
-    <a href="server3.html" class="nav-item"><span>SERVER 3</span></a>
-    <a href="server4.html" class="nav-item"><span>SERVER 4</span></a>
+    <a href="server1.html" class="nav-item"><span>SULLIVAN-SMP</span></a>
+    <a href="server2.html" class="nav-item"><span>BMC4-SMP</span></a>
+    <a href="server3.html" class="nav-item"><span>COMING SOON...</span></a>
+    <a href="server4.html" class="nav-item"><span>COMING SOON...</span></a>
+
 </nav>
     
 </header>
 
-<hr>
-
 <section>
    <div class="box">
-    <h2><u>Thông tin chính về server</u></h2>
+    <h2><u>Thông tin chính về các servers</u></h2>
     <div class="content">
 	<ul>
-        <li>Server luôn chạy 24/7, Máy chủ có cấu hình mạnh và đã được tối ưu hóa tốt</li>
-        <li>Không cần minecraft trả phí để vào, chỉ cần được admin duyệt</li>
-        <li>Server sẽ chỉ thêm các tín năng mới, không làm thay đổi cốt lõi vanilla của game</li>
-        <li>Mọi tiến trình, luật lệ đều sẽ do người chơi quyết định, tài khoản admin sẽ hầu như không online (mn đừng hack/Xray là được) </li>
+        <li>Server trong quá trình hoạt động sẽ luôn chạy 24/7, có cấu hình mạnh và đã được tối ưu hóa tốt</li>
+        <li>Không cần minecraft trả phí, chỉ cần được admin duyệt để có thể vào và chơi cùng mn</li>
+        <li>Các tiến trình, luật lệ đều sẽ do người chơi quyết định, tài khoản admin sẽ hầu như không online (mn đừng hack/Xray là được) </li>
+    <li>Các server sẽ dùng whitelist để tránh người lạ kẻ gian, nên muốn chơi thì cứ tự nhiên tham gia <a href="https://discord.gg/cVV5dSq7Ph" style="color: #ffea00; text-decoration: none; font-weight: bold;">Server Discord</a> để dc duyệt và chơi cùng bọn mình nha!</li>
 	</ul>
     </div>
 
-    <img src="https://i.imgur.com/Mubbslp.jpeg" loading="lazy">
+    <img src="https://i.imgur.com/GcqQgQ5.jpeg" loading="lazy">
 </div>
 
 </section>
 
-<section>
-    <div class="box">
-        <h2> <u>Địa hình, Công trình mới</u> </h2>
-          <div class="content">
-	<ul>
-      <li>Server đã cải tạo lại hầu như tất cả các biome và có cả những địa hình mới</li>
-      <li>Có trên dưới 100 công trình mới lớn nhỏ và tất cả đều đặc biệt theo cách riêng</li>
-      <li>Nhiều công trình trong minecraft cũng đã được nâng cấp!</li>
-	  <li>Quái vật đã được cải thiện và tùy chỉnh, tăng thử thách và thú vị cho game</li>
-	</ul>
-        <img src="https://i.imgur.com/YRrt9gv.jpeg" loading="lazy">
-    </div>
-</section>
- 
-  <section>
-    <div class="box">
-        <h2> <u>Kho báu, thử thách và vật phẩm thú vị</u> </h2>
-          <div class="content">
-	<ul>
-      <li>Các công trình đầy những thử thách, bí mật, và vật phẩm mới! </li>
-      <li>Có hơn 30+ vũ khí, phù phép và bosses mới đặc biệt và mạnh mẽ trong các công trình lớn</li>
-      <li>EnderDragon đã được tăng sức mạnh, thách thức cả những trang bị tốt nhất</li>
-	</ul>
-        <img src="https://i.imgur.com/KpvkPjA.jpeg" loading="lazy">
-    </div>
-</section>
 
 <section>
     <div class="box">
-        <h2> <u>Những thắc mắc cơ bản và giải đáp</u> </h2>
+        <h2> <u>Thắc mắc và giải đáp</u> </h2>
           <div class="content">
 	<ul>
   <table class="qa-table">
@@ -697,30 +715,30 @@ section {
     </tr>
     <tr>
         <td>Server mở 24/7 không?</td>
-        <td>Có, Server chạy liên tục, chỉ đóng khi bảo trì (hoặc cúp điện :P)</td>
+        <td>Có, Server chạy liên tục, chỉ đóng khi bảo trì, dừng hoạt động hoặc có sự cố</td>
     </tr>
     <tr>
         <td>Có cần mua Minecraft bản quyền?</td>
-        <td>Không, Server có hỗ trợ cho người chơi sử dụng minecraft miễn phí</td>
+        <td>Không, Server có hỗ trợ cho người chơi sử dụng acc minecraft miễn phí</td>
     </tr>
     <tr>
         <td>Server có reset không?</td>
-        <td>Không reset, Mục tiêu server là 1 thế giới nơi mn để lại dấu ấn của họ!</td>
+        <td>Server sẽ cố gắng ko reset với mục tiêu là 1 thế giới nơi mn để lại dấu ấn của mình!</td>
     </tr>
     <tr>
         <td>Làm sao để tham gia?</td>
-        <td>Chỉ cần liên hệ với admin để được duyệt,và gắn IP vào minecraft như mọi server khác</td>
+        <td>Chỉ cần liên hệ với admin để được duyệt,và gắn IP của server vào minecraft như mọi server khác</td>
       </tr>
 	  <tr>
-        <td>Server có Vanilla hoàn toàn không?</td>
-        <td>Ngoài add những công trình & địa hình mới, server sẽ là vanilla, không luật lệ, chỉ cấm Hack & Xray</td>
+        <td>Server có luật ko?</td>
+        <td>Tuỳ mỗi server, nhưng nhìn chung sẽ chỉ chính thức bị ban khi hack/xray</td>
     </tr>
 	   <tr>
         <td>Các thông tin về server sẽ được thông báo ở đâu?</td>
-        <td>Các thông tin mới nhất về phiên bản, IP, modslist sẽ được cập nhật lên ngay website này liên tục và nhanh nhất có thể, hoặc bạn có thể tham gia server Discord bên dưới!</td>
+        <td>Các thông tin mới nhất về phiên bản, IP, modslist sẽ được cập nhật lên ngay các trang của từng server nhanh nhất có thể!</td>
     </tr>
     <tr>
-        <td>Chưa biết tải, fps thấp?</td>
+        <td>Chưa biết tải, fps thấp, vấn để kĩ thuật/phần mềm?</td>
         <td>Cứ Dm qua discord bên dưới, chúng tôi sẽ cố gắng giúp nếu có thể</td>
     </tr>
 </table>
@@ -731,7 +749,7 @@ section {
     
 <section>
     <div class="box">
-        <h2> <u>Hướng dẫn cài đặt game (Minecraft)</u> </h2>
+        <h2> <u>Hướng dẫn cài đặt game cơ bản (Minecraft)</u> </h2>
           <div class="content">
 	<ul>
         <li> Video dưới đây sẽ hướng dẫn bạn cách tải minecrat miễn phí trên window! (nguồn:Youtube) </li>
@@ -754,152 +772,51 @@ section {
     </div>
 </section>
 
-	<section>
-  <div class="box">
-    <h2><u>Thông tin kĩ thuật về server</u></h2>
-       <!----> <div class="server-core">
-  <div class="core-item">🧠 CPU: I3 10100</div>
-  <div class="core-item">💾 RAM: 16GB DDR4 2666Mhz</div>
-  <div class="core-item">💽 Storage: 160GB Sata SSD</div>
-  <div class="core-item">🌐 Connection: Ethernet Viettel</div> 
-</div>
-	  <!-- <div class="server-core">
-  <div class="core-item">🧠 CPU: I3 2310M</div>
-  <div class="core-item">💾 RAM: 4GB DDR3 1333Mhz</div>
-  <div class="core-item">💽 Storage: 100GB Sata SSD</div>
-  <div class="core-item">🌐 Network: WLAN Viettel</div> 
-</div> -->
-    <details class="spoiler">
-      <summary>▶ Danh Sách Mod/Datapack Của Server</summary>
-      
-      <table class="cool-table">
-        <tr>
-          <th>Tên mod</th>
-          <th>Chức năng</th>
-        </tr> 
-<tr><td>AFK Display</td><td> Hiện afk player </td></tr>
-<tr><td>Almanac</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>AntiXray</td><td> Chống Xray </td></tr>
-<tr><td>Backup Always Right</td><td> Backup cho server </td></tr>
-<tr><td>C2ME</td><td> Tối ưu hóa </td></tr>
-<tr><td>Kiss</td><td> Hmmmm.... </td></tr>
-<tr><td>Chunky</td><td> Tối ưu hóa </td></tr>  
-<tr><td>Chunk Offline</td><td> Tối ưu hóa </td></tr>
-<tr><td>Cloth Config</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Clumps</td><td> Tối ưu hóa </td></tr>
-<tr><td>Collective</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>CristelLib</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Dungeons+</td><td> Công trình mới </td></tr>
-<tr><td>Dungeons and Taverns</td><td> Công trình mới </td></tr>
-<tr><td>DNT – Ancient City</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Desert Temple</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Jungle Temple</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Nether Fortress</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Ocean Monument</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Pillager Outpost</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Swamp Hut</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT - Stronghold (Lite)</td><td> Nâng cấp công trình </td></tr>
-<tr><td>DNT – Woodland Mansion</td><td> Nâng cấp công trình </td></tr>
-<tr><td>EasyAuth</td><td> Mật khẩu cho players </td></tr>
-<tr><td>Explorify</td><td> Công trình mới </td></tr>	  
-<tr><td>Fabric API</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Fabric Language Kotlin</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Forge Config API Port</td><td> Hỗ trợ mod khác </td></tr>
-<!--<tr><td>Floodgate (Experimental)</td><td> Hỗ trợ mod khác </td></tr>-->
-<tr><td>FerriteCore</td><td> Tối ưu hóa </td></tr>
-<tr><td>FSIT</td><td> Tín năng ngồi </td></tr>
-<tr><td>Geophilic</td><td> Nâng cấp địa hình </td></tr>
-<!--<tr><td>Geyser (Experimental)</td><td> Bedrock Proxy </td></tr>-->
-<tr><td>Get It Together Drops</td><td> Tối ưu hóa </td></tr>
-<tr><td>Graves</td><td> Mộ giữ đồ khi chết </td></tr>
-<tr><td>GrimAC</td><td> Chống hack </td></tr
-<tr><td>Gamingbarn's Morphs</td><td> Công cụ Admin </td></tr
-<tr><td>Incendium</td><td> Nâng cấp địa hình,Công trình mới </td></tr>
-<tr><td>InvView</td><td> Công cụ Admin </td></tr>
-<tr><td>ItemFlexer</td><td> Show item lên chat </td></tr>
-<tr><td>Let Me Despawn</td><td> Tối ưu hóa </td></tr>
-<tr><td>Leaves Be Gone</td><td> Leave Decay nhanh hơn </td></tr>
-<tr><td>Lithium</td><td> Tối ưu hóa </td></tr>
-<tr><td>Leashable Players</td><td> Leash được player khác </td></tr>
-<tr><td>ModernFix</td><td> Tối ưu hóa </td></tr>
-<tr><td>More Mobs</td><td> Thêm nhiều loại Hostiles </td></tr>
-<tr><td>Miniblocks Wandering Trader</td><td> Wandering Trader Bán MiniBlocks </td></tr>
-<tr><td>Noisium</td><td> Tối ưu hóa </td></tr>
-<tr><td>No Feather Trample</td><td> FeartherFallin Ko làm hư ruộng</td></tr>  
-<tr><td>Nullscape</td><td> Nâng cấp địa hình </td></tr>
-<tr><td>Packet Fixer</td><td> Tối ưu hóa </td></tr>
-<tr><td>Puzzles Lib</td></td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Pk's Better Compass</td><td> Thêm chỉ số cho compass </td></tr>
-<tr><td>Pk's Better Item Frames</td><td> ItemFrame có thể vô hình </td></tr>
-<tr><td>Pk's Oxidize Copper</td><td> Oxidize copper bằng thick potions </td></tr>
-<tr><td>Pk's Racks</td><td> Kệ gác vũ khí/dụng cụ </td></tr>
-<tr><td>Pk's Shulker Boxes Names</td><td> ShulkerBox có nametag </td></tr>
-<tr><td>Polymer</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>Painting picker</td><td> Chế Tranh cụ thể bằng Stonecutter </td></tr>
-<tr><td>Random Mob Effects</td><td> Monster có RandomEffect </td></tr>
-<tr><td>Resourceful Config</td><td> Hỗ trợ mod khác </td></tr>
-<tr><td>ScalableLux</td><td> Tối ưu hóa </td></tr>
-<tr><td>ServerCore</td><td> Tối ưu hóa </td></tr>
-<tr><td>Styled Player List</td><td> Cải thiện Tablist </td></tr>
-<tr><td>Skin Restorer</td><td> skins cho players </td></tr>
-<tr><td>Spark</td><td> Tối ưu hóa </td></tr>
-<tr><td>Slumber </td><td> Tối ưu hóa </td></tr>
-<tr><td>Structory</td><td> Công trình mới </td></tr>
-<tr><td>Structory: Towers</td><td> Công trình mới </td></tr>
-<tr><td>Structure Layout Optimizer</td><td> Tối ưu hóa </td></tr>
-<tr><td>Towns and Towers</td><td> Công trình mới </td></tr>
-<tr><td>TT20</td><td> Tối ưu hóa </td></tr>
-<tr><td>True Ending</td><td> Buff Enderdragon </td></tr>
-<tr><td>Totem of Undying Death Messages</td><td> Hiện player được Totem cứu trên chat </td></tr>
-<tr><td>VanillaTweaks Recipes</td><td> Cải thiện các recipes</td></tr>
-<tr><td>Very Many Players (VMP)</td><td> Tối ưu hóa </td></tr>
-<tr><td>Villager Names</td><td> RandomName cho Villagers </td></tr>
-<tr><td>Vanish</td><td> Công cụ Admin </td></tr>
-<tr><td>Wandering Trader Announcements</td><td> Thông báo cho Wandering trader </td></tr>
-<tr><td>YetAnotherConfigLib</td><td> Hỗ trợ mod khác </td></tr>
-     </table>
-    </details>
-
-  </div>
-</section>
-
-
-<hr>
-
 <footer>
-  <h3> Tham gia Server discord và chơi minecraft cùng nhau, tại sao lại không nhỉ? </h3>
-  <h4> <a href="https://discord.gg/cVV5dSq7Ph" target="_blank" rel="noopener noreferrer" style="color: #7289DA;">Link server Discord!</a></h4>
-	<iframe src="https://discord.com/widget?id=1143241728296484955&theme=dark" width="700" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-  <table class="cool-table">
-        <tr>
-          <td>Server's Developers:</td>
-          <td>Pxxm Mxxh Txxxg </td>
-		  <td>Zxx Wxxxxxm </td>
-          <td>Hxxxg Kxm Đxxg Kxxxh </td>
-        </tr>
-	  <tr>
-		  <td>Role:</td>
-		  <td>Coder - Hoster</td>
-		  <td>Tester - Designer</td>
-		  <td>Tester - Supporter</td>
-    <tr>
-      <td>Discord:</td>
-    <td>valguypmt</td>
-    <td>----------</td>
-    <td>khanh_1</td>
-    </tr>
-    </table>
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>💻 Cấu hình Server</h3>
+      <ul class="footer-list">
+        <li><strong>CPU:</strong> I3 10100</li>
+        <li><strong>RAM:</strong> 8GB DDR4 2666Mhz</li>
+        <li><strong>Storage:</strong> 160GB Sata SSD</li>
+        <li><strong>Network:</strong> Viettel Ethernet</li>
+      </ul>
+    </div>
 
-    <hr>
-  <p>server tạo ra nhằm cho ae trong 1 cộng đồng nhỏ, làm quen giao lưu & chơi game cùng nhau</p>
-  <p>nhóm quản lí server là những người không có chuyên môn sâu, server cũng không phải 1 SMP lớn & công khai cho quá nhiều người lạ</p>
-  <p>mọi người trong server cũng thường vào 1 VoiceChat Discord, cùng nhau thám hiểm, trò chuyện và kết bạn mới, nên cứ tự nhiên vào Discord và chơi game cùng nhau!</p>
-  <p>dù sao thì cũng mong mọi người có khoảng thời gian xây dựng, thám hiểm, đào kim cương vui vẻ cùng nhau nhaaaaa :D</p>
+    <div class="footer-box">
+      <h3>🔗 Các Links</h3>
+      <ul class="footer-list">
+        <li><a href="https://discord.gg/cVV5dSq7Ph" target="_blank">Tham gia Discord!</a></li>
+        <li><a href="example1.html">Server Đang chạy</a></li>
+        <li><a href="index.html">Trang Chủ</a></li>
+      </ul>
+    </div>
 
+    <div class="footer-box">
+      <h3>🛠️ Developers</h3>
+      <ul class="footer-list">
+        <li><strong>valguy</strong> (Coder/Host)</li>
+        <li><strong>Zxx Wxxxxxm</strong> (Designer/Tester)</li>
+        <li><strong>Noe Comos</strong> (Tester/Supporter)</li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h3>📜 Lời Nhắn Gửi</h3>
+      <p style="font-size: 13px; text-align: left;">
+        Đây là góc nhỏ để anh em mình cùng giao lưu và chơi game. Server không quá cầu kỳ hay đông đúc, chỉ đơn giản là nơi để kết bạn và thư giãn.
+
+Tụi mình thường xuyên có mặt tại VoiceChat Discord để thám hiểm và trò chuyện, nên bạn cứ tự nhiên tham gia cùng mọi người nha!
+        Dù sao thì cũng chúc mn chơi vui vẻ nha!!
+      </p>
+    </div>
+  </div>
+
+  <hr>
   <div class="version-mark">
-    Sullivan.website · v1.5 · Updated 04/02/2026
-</div>
-
+    Sullivan.website · v2.0 · Updated 19/04/2026
+  </div>
 </footer>
 
 <script>
@@ -939,81 +856,7 @@ section {
             : "Xem danh sách mod";
     });
 });
- const dots = document.getElementById("dots");
-let dotCount = 0;
-const dotInterval = setInterval(() => {
-  dotCount = (dotCount + 1) % 4;
-  dots.textContent = ".".repeat(dotCount);
-}, 500);
-  const ipEl = document.getElementById("server-ip");
-const copyTooltip = document.createElement("div");
-copyTooltip.className = "copy-tooltip";
-copyTooltip.textContent = "Copied";
-document.body.appendChild(copyTooltip);
-ipEl.addEventListener("click", (e) => {
-  navigator.clipboard.writeText("countries-sullivan.gl.joinmc.link");
-  copyTooltip.style.left = e.clientX + "px";
-  copyTooltip.style.top = e.clientY + "px";
-  copyTooltip.classList.add("show");
-  clearTimeout(copyTooltip.hideTimer);
-  copyTooltip.hideTimer = setTimeout(() => {
-    copyTooltip.classList.remove("show");
-  }, 900);
-});
-  const statusDots = document.querySelectorAll(".status-dot");
-const statusTexts = document.querySelectorAll(".status-text");
-function setStatusOnline() {
-  statusDots.forEach(dot => {
-        dot.classList.remove("checking");
-  });
-}
-setTimeout(setStatusOnline, 3000);
-setTimeout(() => {
-  fetch("https://api.mcsrvstat.us/2/countries-sullivan.gl.joinmc.link")
-    .then(res => res.json())
-    .then(data => {
-      clearInterval(dotInterval);
-      const dot = document.querySelector(".status-box .dot");
-      const text = document.getElementById("status-text");
-      const box = document.getElementById("server-status");
-      dots.remove();
-      box.classList.remove("checking");
-      if (data.online) {
-        dot.style.background = "#00ff6a";
-        text.textContent = `Server Online · ${data.players.online}/${data.players.max} players`;
-      } else {      
-/* EDIT THE SERVER STATUS MANUALLY DOWN HERE */
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        dot.style.background ="#00ff00";
-        text.textContent = "Server Online";
-        /* RED:#ff3b3b  -  GREEN: #00ff00*/
-        /* [Nguyên Nhân: Bảo Trì - Dự kiến Mở Lại: Sớm Nhất Có Thể] */
-        
-        
-        
-        
-        
-        
-        
-        
-        
-/* EDIT THE SERVER STATUS MANUALLY UP HERE */
-      }
-    })
-    .catch(() => {
-      clearInterval(dotInterval);
-      document.getElementById("status-text").textContent = "Status unavailable";
-    });
-}, 3000);
 </script>
 </body>
 </html>
