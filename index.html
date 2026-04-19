@@ -215,6 +215,80 @@
 .nav-item:hover {
     text-shadow: 0 0 8px rgba(255, 234, 0, 0.6);
 }
+    /* Launcher-Style Server Rows */
+.server-hub {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.server-entry {
+    display: flex;
+    align-items: center;
+    background: rgba(30, 30, 30, 0.7);
+    border-left: 4px solid #555; /* Neutral state */
+    border-radius: 8px;
+    padding: 12px 20px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    color: white;
+}
+
+/* Color coding for Status */
+.server-entry.online { border-left-color: #00ff44; }
+.server-entry.offline { border-left-color: #ff4444; opacity: 0.7; }
+
+.server-entry:hover {
+    background: rgba(50, 50, 50, 0.9);
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.online .status-indicator { background: #00ff44; box-shadow: 0 0 8px #00ff44; }
+.offline .status-indicator { background: #ff4444; }
+
+.server-name {
+    font-weight: 800;
+    font-size: 18px;
+    color: #ffea00;
+    min-width: 160px;
+    text-align: left;
+}
+
+.server-brief {
+    flex: 1;
+    text-align: left;
+    font-size: 14px;
+    color: #bbb;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.server-action-img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-left: 20px;
+    filter: brightness(0.8);
+}
+
+.server-entry:hover .server-action-img { filter: brightness(1); }
+
+@media (max-width: 768px) {
+    .server-entry { flex-direction: column; text-align: center; }
+    .server-brief { border-left: none; padding: 10px 0; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 10px; }
+    .server-action-img { display: none; }
+}  
     </style>
 </head>
 
@@ -261,7 +335,34 @@
 
 </section>
 
+<section>
+    <div class="box">
+      <h2><u>Hệ Thống Máy Chủ Sullivan</u></h2>
+        <div class="server-hub">
 
+            <a href="server1.html" class="server-entry online">
+                <div class="status-indicator"></div>
+                <div class="server-name">SULLIVAN SMP</div>
+                <div class="server-brief">
+                    Server SMP truyền thống, xây dựng cộng đồng và kết nối cùng ae
+                </div>
+                <img src="https://i.imgur.com/Mubbslp.jpeg" class="server-action-img">
+            </a>
+
+            <a href="server2.html" class="server-entry offline">
+                <div class="status-indicator"></div>
+                <div class="server-name">BMC4 SMP</div>
+                <div class="server-brief">
+                    Chinh phục thế giới đầy mới mẻ, hùng vĩ và đầy thử thách cùng BMC4 Modpack!
+                </div>
+                <img src="https://i.imgur.com/WYHWxnW.jpeg" class="server-action-img">
+            </a>
+
+          
+          
+        <p style="font-size: 12px; opacity: 0.5; margin-top: 15px;">Nhấn vào từng server để xem chi tiết hơn</p>
+    </div>
+</section>
 <section>
     <div class="box">
         <h2> <u>Thắc mắc và giải đáp</u> </h2>
