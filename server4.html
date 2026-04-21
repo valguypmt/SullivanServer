@@ -215,39 +215,229 @@
 .nav-item:hover {
     text-shadow: 0 0 8px rgba(255, 234, 0, 0.6);
 }
-      /* Casual Coming Soon Section */
-.simple-placeholder {
-    padding: 60px 40px;
-    margin: 100px auto;
-    max-width: 800px;
-    background: rgba(42, 42, 42, 0.95);
-    border-radius: 16px;
-    text-align: center;
+/* Modlist Spoiler Styles */
+.mod-spoiler {
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #444;
+    border-radius: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.simple-placeholder h2 {
+.mod-spoiler summary {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
     color: #ffea00;
-    font-size: 32px;
+    list-style: none; /* Removes the default arrow */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.mod-spoiler summary:hover {
+    background: rgba(255, 234, 0, 0.1);
+}
+
+/* Custom Arrow */
+.mod-spoiler summary::before {
+    content: "📁";
+    margin-right: 10px;
+}
+
+.mod-spoiler[open] summary::before {
+    content: "📂";
+}
+
+/* The Table inside the Spoiler */
+.mod-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.mod-table th {
+    background: #111;
+    padding: 12px;
+    color: #888;
+    text-align: left;
+}
+
+.mod-table td {
+    padding: 12px;
+    border-top: 1px solid #333;
+    text-align: left;
+}
+
+.mod-category {
+    color: #ffea00;
+    font-weight: bold;
+    width: 30%;
+}
+      /* Quick Status Bar */
+.status-capsule {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 5px 15px;
     margin-bottom: 20px;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+.status-capsule:hover {
+    border-color: #ffea00;
+    background: rgba(20, 20, 20, 0.9);
+}
+
+.mini-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.version-tag {
+    font-size: 12px;
+    font-weight: bold;
+    color: #888;
+    border-right: 1px solid #444;
+    padding-right: 12px;
+}
+
+.live-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 800;
     text-transform: uppercase;
 }
 
-.simple-placeholder p {
-    font-size: 16px;
-    color: #cccccc;
-    line-height: 1.8;
-    margin-bottom: 30px;
+/* Status Toggle Logic */
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
 }
 
-.brief-tag {
-    display: inline-block;
-    padding: 5px 15px;
-    background: rgba(255, 234, 0, 0.1);
+/* Change 'active' to 'maintenance' or 'down' to toggle */
+.status-capsule.active .dot { background: #00ff44; box-shadow: 0 0 8px #00ff44; }
+.status-capsule.active .status-text { color: #00ff44; }
+
+.status-capsule.maintenance .dot { background: #ffa500; box-shadow: 0 0 8px #ffa500; }
+.status-capsule.maintenance .status-text { color: #ffa500; }
+.status-capsule.maintenance .status-text::after { content: "MAINTENANCE"; }
+
+.status-capsule.down .dot { background: #ff4444; box-shadow: 0 0 8px #ff4444; }
+.status-capsule.down .status-text { color: #ff4444; }
+.status-capsule.down .status-text::after { content: "OFFLINE"; }
+
+/* Hide default text if using maintenance/down */
+.status-capsule.active .status-text::after { content: "ONLINE"; }
+      /* The IP Display Box */
+.ip-copy-box {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 234, 0, 0.3);
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 10px;
+}
+
+.ip-copy-box:hover {
+    border-color: #ffea00;
+    background: rgba(20, 20, 20, 1);
+    transform: translateY(-2px);
+}
+
+.ip-text {
     color: #ffea00;
-    border-radius: 20px;
-    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* The "Copied!" Tooltip */
+#cursor-tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: #ffea00;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
     font-weight: bold;
-    margin-bottom: 15px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: opacity 0.2s ease;
+    z-index: 10000;
+}
+      /* BMC4 Concept Layout */
+.concept-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    flex-wrap: wrap; /* Stacks on mobile */
+}
+
+.concept-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.concept-image-wrap {
+    flex: 1;
+    min-width: 300px;
+}
+
+.concept-image-wrap img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 234, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modpack-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: rgba(255, 234, 0, 0.1);
+    border: 1px solid #ffea00;
+    color: #ffea00 !important;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.modpack-link:hover {
+    background: #ffea00;
+    color: #000 !important;
+}
+
+.wip-badge {
+    background: #ff3333;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 		.box {
     padding: 40px;
@@ -300,16 +490,55 @@ section:hover .box {
 </head>
 
 <body>
-<div id="scroll-progress"></div>
+	<div id="scroll-progress"></div>
 <div id="mini-header">Minecraft servers for all sullivers!!!</div>
 
 <header>
   
 <img
-  src="https://i.imgur.com/bVaBSkP.png"
-  alt="SULLIVAN SMP"
+  src="https://i.imgur.com/S2BKUmv.png"
+  alt="SULLIVAN Descreased"
   class="header-title"
 />
+  
+  
+  
+  
+  
+  
+  
+  <div class="status-capsule down">
+    <!-- Change 'active' to 'maintenance' or 'down' to toggle -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <img src="https://i.imgur.com/5huMaS6.png" class="mini-logo" alt="logo">
+    
+    <div class="version-tag">Forge 1.20.1</div>
+    
+    <div class="live-status">
+        <div class="dot"></div>
+        <span class="status-text"></span>
+    </div>
+
+    <div style="font-size: 11px; color: #666; font-style: italic;">
+        <!-- abcdefg -->
+    </div>
+    <div id="cursor-tooltip">Copied IP Server!</div>
+
+<div class="ip-copy-box" onclick="copyIP(event)">
+    <span class="ip-text">---------------------</span>
+</div>
+</div>
+  
   <p class="spacer"></p>
     <p class="spacer"></p>
     <p class="spacer"></p>
@@ -325,22 +554,73 @@ section:hover .box {
     
 </header>
 <section>
-    <div class="box simple-placeholder">
-        <h2>COMING SOON...</h2>
-        <p>
-            Server này hiện đang còn trống, chúng mình sẽ lên ý tưởng cho một Concept mới để mang lại trải nghiệm thú vị và độc đáo cho cộng đồng Sullivan.
-        </p>
-        <p>
-            Các thông tin về phiên bản, lối chơi, chủ đề và ngày ra mắt sẽ được cập nhật tại đây ngay khi có thông báo chính thức. Hãy theo dõi Discord để không bỏ lỡ nhé!
-        </p>
+    <div class="box">
+        <div class="concept-container">
+            <div class="concept-text">
+                <span class="wip-badge">Concept State</span>
+              <p></p>
+                <h2 style="text-align: left; margin-top: 0;">
+                  
+                SULLIVAN Decreased</h2>
+                <p>
+                    Server này hiện đang trong quá trình phát triển và lên ý tưởng dựa trên modpack DeceasedCraft - Urban Zombie Apocalypse (Forge) 
+                    Tụi mình đang hoàn thiện hệ thống, tối ưu hóa hiệu năng và xây dựng một thế giới phiêu lưu đầy thử thách.
+                </p>
+                <p>
+                    Bạn có thể xem trước modpack chính của server thông qua link dưới đây:
+                </p>
+                <a href="https://www.curseforge.com/minecraft/modpacks/deceasedcraft" target="_blank" class="modpack-link">
+                    🔗 Link MODPACK DeceasedCraft (Cursedforge)
+                </a>
+            </div>
 
-        <div style="margin-top: 40px;">
-            <a href="index.html" style="color: #ffea00; text-decoration: underline; font-size: 14px;">
-                ← Quay lại Trang Chủ
-            </a>
+            <div class="concept-image-wrap">
+                <img src="https://i.imgur.com/4so0KAI.jpeg" alt="BMC4 Concept Preview">
+            </div>
         </div>
     </div>
 </section>
+  <section>
+    <div class="box">
+      <h2> <u>Tín năng và Thông tin chính + Trailer</u> </h2> <p>(nguồn: từ trang curseforge của modpack)</p>
+          <div class="content">
+	<ul>
+    <li>🏙️ Hơn 60 tòa nhà custom được xây tay bởi kiến trúc sư chuyên nghiệp _C70_</li>
+    <li>🏙️ Thành phố cực rộng được tạo ngẫu nhiên (The Lost Cities), chia thành 5 khu vực riêng biệt</li>
+    <li>⚙️ Hệ thống kỹ thuật dựa trên Create và Immersive Engineering, cho phép tự động hóa mọi thứ</li>
+    <li>🗣️ Hơn 8 NPC được thiết kế riêng với cốt truyện và nhiệm vụ, hoàn thành để mở khóa giao dịch</li>
+    <li>📜 Chuỗi nhiệm vụ và cốt truyện được đầu tư bài bản</li>
+    <li>📖 Hệ thống thăng tiến hoàn toàn mới cho cả khám phá và sổ nhiệm vụ</li>
+    <li>🧟 Hệ thống Horde Wave (quái tràn lên) dựa trên thời gian chơi, độ khó tăng dần theo ngày</li>
+    <li>🧟 Chiến đấu với hơn 15+ loại zombie đặc biệt xuất hiện khắp thành phố</li>
+    <li>⚔️ Hơn 100+ vũ khí và súng ống, được cân bằng cho nhiều lối chơi khác nhau</li>
+    <li>🛡️ Hơn 20+ bộ giáp chia làm 4 cấp độ thăng tiến</li>
+    <li>💰 Hơn 800+ bảng vật phẩm (loot tables) rải rác trong các tòa nhà cho anh em tha hồ "vét" đồ</li>
+    <li>❤️ Tăng máu bằng cách ăn nhiều loại thực phẩm khác nhau và chú ý đến chế độ ăn uống</li>
+    <li>🎯 Hệ thống cây kỹ năng (Skill Tree) tùy chỉnh để tối ưu hóa lối chơi</li>
+    <li>🏃 Làm chủ kỹ năng Parkour để né tránh nguy hiểm hoặc thực hiện các pha nhào lộn đỉnh cao</li>
+    <li>⚖️ Tùy chỉnh độ khó (Dễ, Thường, Khó) cho trải nghiệm sinh tồn thực thụ</li>
+    <li>🧪 Cơ chế nhiễm bệnh: Tự chữa trị bằng táo vàng... hoặc gục ngã và biến thành zombie</li>
+    <li>🚗 Tìm kiếm xe cộ bị bỏ hoang trong thành phố để sửa chữa hoặc tự chế tạo từ đầu</li>
+    <li>🌡️ Cơ chế sát thương bộ phận cơ thể, độ khát, nhiệt độ và mùa vụ thực tế</li>
+    <li>🪑 Các bản mod về trang trí và nội thất...</li>
+    <li>✨ Và còn nhiều nội dung khác nữa!</li>
+</ul>
+</ul>
+
+	</ul>
+        <iframe 
+    width="640" 
+    height="360"
+    src="https://www.youtube.com/embed/3DxZ0WaqIgk"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
+    </div>
+</section>
+
 <footer>
   <div class="footer-container">
     <div class="footer-box">
@@ -407,6 +687,24 @@ Tụi mình thường xuyên có mặt tại VoiceChat Discord để thám hiể
         document.getElementById("scroll-progress").style.width = (scrollTop / scrollHeight) * 100 + "%";
         document.getElementById("mini-header").style.display = window.scrollY > 300 ? "block" : "none";
     });
+  function copyIP(e) {
+    const ip = "Theres no IP for Sullivan DeceasedCraft yet";
+    const tooltip = document.getElementById("cursor-tooltip");
+
+    navigator.clipboard.writeText(ip).then(() => {
+        // Find where the user clicked
+        tooltip.style.left = e.clientX + "px";
+        tooltip.style.top = (e.clientY - 15) + "px";
+        
+        // Show the message
+        tooltip.style.opacity = "1";
+
+        // Hide it after a second
+        setTimeout(() => {
+            tooltip.style.opacity = "0";
+        }, 1000);
+    });
+}
 </script>
 </body>
 </html>
