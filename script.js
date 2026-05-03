@@ -16,7 +16,7 @@
         document.getElementById("mini-header").style.display = window.scrollY > 300 ? "block" : "none";
     });
   function copyIP(e) {
-    const ip = "Theres no IP for Sullivan BMC4 yet";
+    const ip = "countries-sullivan.gl.joinmc.link";
     const tooltip = document.getElementById("cursor-tooltip");
 
     navigator.clipboard.writeText(ip).then(() => {
