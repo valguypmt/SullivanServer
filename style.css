@@ -632,3 +632,36 @@ section:hover .box {
     display: inline-block;
     margin-bottom: 10px;
 }
+    /* Main container holding the live status elements */
+    .status-text-only {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px; /* Balanced spacing between the text and the live dot */
+    }
+
+    /* Base layout configuration for the active status line */
+    #player-count-text {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffea00; /* Forces the initial loading text to be yellow */
+    }
+
+    /* The Live Status Dot Indicator */
+    .status-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ffea00; /* Optional: Makes the initial dot yellow too while loading */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Dynamic UI State Rules injected via JavaScript */
+    .online-state { color: #00ff44 !important; }
+    .online-dot { background-color: #00ff44; box-shadow: 0 0 8px #00ff44; }
+
+    .offline-state { color: #ff4444 !important; }
+    .offline-dot { background-color: #ff4444; box-shadow: 0 0 8px #ff4444; }
