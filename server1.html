@@ -26,41 +26,23 @@
   
   
   
-  <div class="status-capsule active">
-    <!-- Change 'active' to 'maintenance' or 'down' to toggle -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<div class="status-capsule active">
     <img src="https://i.imgur.com/BAGiTAX.jpeg" class="mini-logo" alt="logo">
     
     <div class="version-tag">Vanilla 1.21.11</div>
     
-    <div class="live-status">
-        <div class="dot"></div>
-        <span class="status-text"></span>
-    </div>
+    <div class="status-text-only">
+  <span id="player-count-text">Checking players...</span>
+  <span id="indicator-dot" class="status-dot"></span>
+</div>
 
-    <div style="font-size: 11px; color: #666; font-style: italic;">
-        <!-- abcdefg -->
-    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
     <div id="cursor-tooltip">Copied IP Server!</div>
 
-<div class="ip-copy-box" onclick="copyIP(event)">
-    <span class="ip-text">countries-sullivan.gl.joinmc.link</span>
-</div>
-</div>
-  
-  <p class="spacer"></p>
-    <p class="spacer"></p>
-    <p class="spacer"></p>
+    <div class="ip-copy-box" onclick="copyIP(event)">
+        <span class="ip-text">countries-sullivan.gl.joinmc.link</span>
+    </div>
 </div>
 <nav class="sub-nav">
     <a href="index.html" class="nav-item"><span>TRANG CHỦ</span></a>
@@ -262,5 +244,28 @@ Tụi mình thường xuyên có mặt tại VoiceChat Discord để thám hiể
     Sullivan.website
   </div>
 </footer>
+	<script>
+    // Configuration Target
+var url = "https://api.minetools.eu/ping/countries-sullivan.gl.joinmc.link";
+$.getJSON(url, function(r) {
+  var motdElement = $('#motd-line');
+  var playerCountText = $('#player-count-text');
+  var indicatorDot = $('#indicator-dot');
+  // 1. Handle Offline State (Turns RED and updates status dot/
+  if (r.error) {
+    motdElement.text('Server is currently unreachable.');
+    playerCountText.text('Offline').addClass('offline-state').removeClass('online-state');
+    indicatorDot.addClass('offline-dot').removeClass('online-dot');
+    return false;
+  }
+  // 2. Clear Minecraft formatting codes out of the description payload
+  var cleanDescription = r.description.replace(/§(.+?)/gi, '');
+  motdElement.html(cleanDescription);
+  // 3. Handle Online State (Turns GREEN and updates player numbers)
+  playerCountText.html('Players Online: ' + r.players.online);
+  playerCountText.addClass('online-state').removeClass('offline-state');
+  indicatorDot.addClass('online-dot').removeClass('offline-dot');
+});
+  </script>
 </body>
 </html>
