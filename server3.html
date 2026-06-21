@@ -35,7 +35,7 @@
     <div id="cursor-tooltip">Copied IP Server!</div>
 
     <div class="ip-copy-box" onclick="copyIP(event)">
-        <span class="ip-text">countries-sullivan.gl.joinmc.link</span>
+        <span class="ip-text">no id address for the server yet</span>
     </div>
 </div>
 	
@@ -151,5 +151,47 @@ Tụi mình thường xuyên có mặt tại VoiceChat Discord để thám hiể
     Sullivan.website
   </div>
 </footer>
+	<script>
+function copyIP(e) {
+    const ip = "no id address for the server yet";
+    const tooltip = document.getElementById("cursor-tooltip");
+
+    navigator.clipboard.writeText(ip).then(() => {
+        // Find where the user clicked
+        tooltip.style.left = e.clientX + "px";
+        tooltip.style.top = (e.clientY - 15) + "px";
+        
+        // Show the message
+        tooltip.style.opacity = "1";
+
+        // Hide it after a second
+        setTimeout(() => {
+            tooltip.style.opacity = "0";
+        }, 1000);
+    });
+}
+		
+    // Configuration Target
+var url = "https://api.minetools.eu/ping/notthing.net";
+$.getJSON(url, function(r) {
+  var motdElement = $('#motd-line');
+  var playerCountText = $('#player-count-text');
+  var indicatorDot = $('#indicator-dot');
+  // 1. Handle Offline State (Turns RED and updates status dot/
+  if (r.error) {
+    motdElement.text('Server is currently unreachable.');
+    playerCountText.text('Offline').addClass('offline-state').removeClass('online-state');
+    indicatorDot.addClass('offline-dot').removeClass('online-dot');
+    return false;
+  }
+  // 2. Clear Minecraft formatting codes out of the description payload
+  var cleanDescription = r.description.replace(/§(.+?)/gi, '');
+  motdElement.html(cleanDescription);
+  // 3. Handle Online State (Turns GREEN and updates player numbers)
+  playerCountText.html('Players Online: ' + r.players.online);
+  playerCountText.addClass('online-state').removeClass('offline-state');
+  indicatorDot.addClass('online-dot').removeClass('offline-dot');
+});
+  </script>
 </body>
 </html>
