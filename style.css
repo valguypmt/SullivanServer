@@ -665,3 +665,143 @@ section:hover .box {
 
     .offline-state { color: #ff4444 !important; }
     .offline-dot { background-color: #ff4444; box-shadow: 0 0 8px #ff4444; }
+
+/* Container 2 cột gốc, tăng kích thước khoảng cách để tạo độ chunky */
+.modpack-download-container-v2 {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    text-align: left;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.modpack-download-text-v2 {
+    flex: 1.4;
+    min-width: 320px;
+}
+
+.modpack-download-text-v2 p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Cụm nút bấm hành động to và dày dặn hơn */
+.modpack-action-group-v2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* Nút Google Drive lớn, chunky và phát sáng */
+.main-drive-btn-v2 {
+    display: inline-block;
+    padding: 16px 32px;
+    background: #ffea00;
+    color: #000000 !important;
+    border: 2px solid #ffea00;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 6px 20px rgba(255, 234, 0, 0.25);
+    text-transform: uppercase;
+}
+
+.main-drive-btn-v2:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(255, 255, 255, 0.35), 0 0 20px rgba(255, 234, 0, 0.2);
+}
+
+/* Nút Discord phụ chunky đồng bộ */
+.side-discord-btn-v2 {
+    display: inline-block;
+    padding: 15px 24px;
+    background: rgba(88, 101, 242, 0.12);
+    border: 2px solid rgba(88, 101, 242, 0.4);
+    color: #5865F2 !important;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.side-discord-btn-v2:hover {
+    background: #5865F2;
+    color: #ffffff !important;
+    border-color: #5865F2;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4);
+}
+
+/* Khối hiển thị thông tin tệp tin bên phải - Được phóng to và dày dặn hơn */
+.modpack-download-info-card-v2 {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 254, 0, 0.15);
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: inset 0 0 20px rgba(255, 234, 0, 0.02), 0 12px 35px rgba(0,0,0,0.6);
+    transition: border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+section:hover .modpack-download-info-card-v2 {
+    border-color: rgba(255, 234, 0, 0.4);
+}
+
+.info-card-header-v2 {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: #888;
+    letter-spacing: 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.info-card-body-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.info-line-v2 {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding-bottom: 8px;
+}
+
+.info-line-v2 span {
+    color: #aaa;
+}
+
+.info-card-footer-v2 {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+    .modpack-action-group-v2 {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .main-drive-btn-v2, .side-discord-btn-v2 {
+        text-align: center;
+    }
+}
