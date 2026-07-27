@@ -16,3 +16,25 @@
         document.getElementById("mini-header").style.display = window.scrollY > 300 ? "block" : "none";
     });
 
+
+
+
+
+let currentSlideIndex = 0;
+
+// Chuyển slide Left/Right
+function changeSlide(direction) {
+    const track = document.getElementById('sliderTrack');
+    const totalSlides = track.children.length;
+
+    currentSlideIndex += direction;
+
+    if (currentSlideIndex >= totalSlides) {
+        currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+        currentSlideIndex = totalSlides - 1;
+    }
+
+    const amountToMove = -currentSlideIndex * 100;
+    track.style.transform = `translateX(${amountToMove}%)`;
+}
