@@ -1,4 +1,3 @@
-    // Reveal animation
     const boxes = document.querySelectorAll(".box");
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -8,7 +7,6 @@
     }, { threshold: 0.1 });
     boxes.forEach(box => observer.observe(box));
 
-    // Progress bar & Mini-header
     window.addEventListener("scroll", () => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -22,7 +20,6 @@
 
 let currentSlideIndex = 0;
 
-// Chuyển slide Left/Right
 function changeSlide(direction) {
     const track = document.getElementById('sliderTrack');
     const totalSlides = track.children.length;
