@@ -110,11 +110,9 @@
     
 <section id="modlist">
     <div class="box">
-        <!-- Tiêu đề lớn được đưa ra ngoài container và căn giữa đồng bộ -->
         <h2><u>Modpack và cách cài đặt</u></h2>
         
         <div class="modpack-download-container-v2">
-            <!-- Bên trái: Nội dung giới thiệu & Cụm nút bấm lớn hơn -->
             <div class="modpack-download-text-v2">
                 <p>
                     Server được xây dựng, tối ưu và điều chỉnh trực tiếp dựa trên nền tảng của modpack <strong>Better Minecraft 1 (BMC1)</strong> phiên bản Forge 1.16.5
@@ -122,7 +120,6 @@
                 <p>
 Để tham gia, bạn chỉ cần làm theo hướng dẫn như bên dưới, rất đơn giản!, các setting trong modpack đã được tối ưu và link server cũng có sẵn trong phần multiplayer cho bạn tham gia!</p>
                 
-                <!-- Khu vực cụm nút bấm chunky -->
                 <div class="modpack-action-group-v2">
                     <a href="https://drive.google.com/drive/folders/1Vs6UATQtgLgn7kpb-ikQvu4Ac5jUIy-o?usp=sharing" target="_blank" class="main-drive-btn-v2">
                         TẢI MODPACK LAUNCHER QUA GG DRIVE (Simple)
@@ -140,7 +137,6 @@
                
             </div>
 
-            <!-- Bên phải: Khối thông số tệp tin bự và dày dặn hơn -->
             <div class="modpack-download-info-card-v2">
                 <div class="info-card-header-v2">Thông tin về modpack</div>
                 <div class="info-card-body-v2">
@@ -151,7 +147,6 @@
             
               <div class="info-card-footer-v2">Lưu ý: không thể sử dụng BMC1 modpack gốc để vào server</div>
             </div>
-           <!-- SLIDER HƯỚNG DẪN BẰNG HÌNH ẢNH (Phóng to khi click) -->
 <div class="tutorial-slider">
     <button class="nav-arrow prev-btn" onclick="changeSlide(-1)">&lt;</button>
     <button class="nav-arrow next-btn" onclick="changeSlide(1)">&gt;</button>
@@ -241,37 +236,30 @@ function copyIP(e) {
     const tooltip = document.getElementById("cursor-tooltip");
 
     navigator.clipboard.writeText(ip).then(() => {
-        // Find where the user clicked
         tooltip.style.left = e.clientX + "px";
         tooltip.style.top = (e.clientY - 15) + "px";
         
-        // Show the message
         tooltip.style.opacity = "1";
 
-        // Hide it after a second
         setTimeout(() => {
             tooltip.style.opacity = "0";
         }, 1000);
     });
 }
 		
-    // Configuration Target
 var url = "https://api.minetools.eu/ping/virtual-artistic.gl.joinmc.link";
 $.getJSON(url, function(r) {
   var motdElement = $('#motd-line');
   var playerCountText = $('#player-count-text');
   var indicatorDot = $('#indicator-dot');
-  // 1. Handle Offline State (Turns RED and updates status dot/
   if (r.error) {
     motdElement.text('Server is currently unreachable.');
     playerCountText.text('Offline').addClass('offline-state').removeClass('online-state');
     indicatorDot.addClass('offline-dot').removeClass('online-dot');
     return false;
   }
-  // 2. Clear Minecraft formatting codes out of the description payload
   var cleanDescription = r.description.replace(/§(.+?)/gi, '');
   motdElement.html(cleanDescription);
-  // 3. Handle Online State (Turns GREEN and updates player numbers)
   playerCountText.html('Players Online: ' + r.players.online);
   playerCountText.addClass('online-state').removeClass('offline-state');
   indicatorDot.addClass('online-dot').removeClass('offline-dot');
