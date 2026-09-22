@@ -909,3 +909,166 @@ section:hover .modpack-download-info-card-v2 {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 234, 0, 0.4);
 }
+
+
+/* --- FAREWELL & WORLD ARCHIVE SECTION --- */
+.archive-box {
+    text-align: center;
+}
+
+.archive-farewell-text {
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #dddddd;
+}
+
+/* Container chia 2 cột cho 2 World */
+.world-download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Card thiết kế tổng thể */
+.world-card {
+    background: rgba(15, 15, 15, 0.75);
+    border: 1px solid rgba(255, 234, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.world-card:hover {
+    border-color: #ffea00;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 234, 0, 0.2);
+}
+
+/* Ảnh Banner phía trên của từng World Card */
+.world-card-banner {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+.world-card-banner img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    filter: brightness(0.85);
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.world-card:hover .world-card-banner img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.world-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffea00;
+    border: 1px solid #ffea00;
+    padding: 4px 10px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+/* Nội dung chi tiết bên trong Card */
+.world-card-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.world-title {
+    font-size: 20px;
+    color: #ffea00;
+    margin: 0 0 15px 0;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+}
+
+.world-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.stat-label {
+    color: #888888;
+    font-weight: bold;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.world-desc {
+    font-size: 13px;
+    color: #aaaaaa;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex: 1;
+}
+
+/* Nút Tải World (Download Button) */
+.world-download-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background: rgba(255, 234, 0, 0.15);
+    color: #ffea00 !important;
+    border: 1px solid #ffea00;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 234, 0, 0.1);
+}
+
+.world-download-btn:hover {
+    background: #ffea00;
+    color: #000000 !important;
+    box-shadow: 0 0 18px rgba(255, 234, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Responsive cho Mobile */
+@media (max-width: 768px) {
+    .world-download-grid {
+        grid-template-columns: 1fr;
+    }
+}
